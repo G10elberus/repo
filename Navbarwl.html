@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar with logo</title>
+    <link rel="stylesheet" href="Navbarwl.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+    </style>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <nav class="sidebar" id="sidebar">
+        <header>
+            <div class="image-text">
+                <span class="image">
+                    <img src="logo1.png" alt="Logo">
+                </span>
+
+                <div class="header-text text">
+                    <span class="name">Yatharafa 2</span>
+                    <span class="profession">Kos kossan</span>
+                </div>
+            </div>
+            <i class='bx bx-chevron-right toggle' id="toggleBtn"></i>
+        </header>
+
+        <div class="menu-bar">
+            <div class="menu">
+                <ul class="menu-links">
+                    <li class="nav-link search-box">
+                        <a href="#">
+                            <i class='bx bx-search-alt icon'></i>
+                            <input type="search" placeholder="Search...">
+                        </a>
+                    </li>
+
+                    <li class="nav-link active">
+                        <a href="#">
+                            <i class='bx bx-home icon'></i>
+                            <span class="text nav-text">Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="#">
+                            <i class='bx bx-info-circle icon'></i>
+                            <span class="text nav-text">About</span>
+                        </a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="#">
+                            <i class='bx bxs-contact icon'></i>
+                            <span class="text nav-text">Contacts</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="bottom-content">
+                <ul>
+                    <li class="nav-link logout">
+                        <a href="#">
+                            <i class='bx bx-log-out icon'></i>
+                            <span class="text nav-text">Logout</span>
+                        </a>
+                    </li>
+
+                    <li class="mode">
+                        <div class="mode-label">
+                            <i class='bx bx-moon icon'></i>
+                            <span class="mode-text text">Dark mode</span>
+                        </div>
+
+                        <label class="switch" aria-label="Toggle dark mode">
+                            <input type="checkbox" id="themeToggle">
+                            <span class="slider"></span>
+                        </label>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <script>
+        const sidebar = document.getElementById('sidebar');
+        const toggleBtn = document.getElementById('toggleBtn');
+        const themeToggle = document.getElementById('themeToggle');
+
+        toggleBtn.addEventListener('click', () => {
+            sidebar.classList.toggle('close');
+        });
+
+        themeToggle.addEventListener('change', () => {
+            document.body.classList.toggle('dark', themeToggle.checked);
+        });
+    </script>
+</body>
+</html>
